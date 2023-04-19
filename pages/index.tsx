@@ -2,52 +2,38 @@ import AppNavbar from '@/components/AppNavbar';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useCallback, useEffect, useRef } from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import Button from '@/components/Button';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function HomePage()
 {
-	const audioRef = useRef<HTMLAudioElement>(null);
-	useEffect(() => {
-		audioRef.current?.click();
-		audioRef.current?.play();
-	}, []);
+	const router = useRouter();
 
 	return (
-		<div className="w-full h-full flex flex-col items-center justify-center">
+		<div className="w-full h-full flex flex-col gap-8 items-center justify-start max-w-7xl mx-auto py-16 p-8">
 			<Head>
-				<title>Jensen Labs Template</title>
+				<title>Stasia</title>
 			</Head>
-			<Image src='https://media.tenor.com/UeTh6kTjoP0AAAAd/topg-andrew.gif' width='400' height='500' alt='Mr Producer' className='rounded-lg pb-2' />
-			<audio id="player" autoPlay controls loop className='w-[400px]'>
-				<source src="mr_producer.mp3" type="audio/mp3" />
-			</audio>
-			<p className="text-2xl font-semibold">Jensen Labs Template Repository.</p>
-			<br />
-			<span>
-				Please ensure that you have Supabase setup with the given NEXT_PUBLIC_SUPABASE_PUBLIC_KEY and NEXT_PUBLIC_SUPABASE_ANON_KEY inside the Jensen Labs Doppler, under the given project.
-				<br />
-				Then configure the .env.local and storage buckets with whatever you need.
+			<Image src='/logo.png' alt='logo' quality={100} width={2000} height={1000} priority={true} className='w-1/2' />
+			<span className='font-semibold text-xl text-center'>
+				A startup-focused tool for <span className='text-primary'>project management</span>, <span className='text-primary'>discussion</span>,&nbsp;
+				<span className='text-primary'>planning</span>, <span className='text-primary'>documentation</span> and <span className='text-primary'>file management</span>.
 			</span>
-			<small>If not, ensure you have that setup in the environment variables before building.</small>
-			<small>Otherwise, have a fucking sook if something doesn't work. 🤓</small>
-			<br />
-			<span>
-				The following libraries are pre-installed:
-				<ol>
-					<li>"@emotion/react": "^11.10.5",</li>
-					<li>"@emotion/styled": "^11.10.5",</li>
-					<li>"@mui/icons-material": "^5.11.0",</li>
-					<li>"@mui/material": "^5.11.8",</li>
-					<li>"@next/font": "13.1.6",</li>
-					<li>"@supabase/auth-helpers-nextjs": "^0.5.4",</li>
-					<li>"@supabase/auth-helpers-react": "^0.3.1",</li>
-					<li>"@supabase/supabase-js": "^2.10.0",</li>
-				</ol>
-			</span>
-			<span className='text-center mt-4'>
-				We also use Doppler, read the docs <a href='https://docs.doppler.com/docs/install-cli' target='_blank' className='text-blue-500 hover:text-blue-600'>here</a> to get started. 
-				<br />
-				It's to ensure that environment variables are never in the configs or in the repository ever. Every developer is required to have it.
-			</span>
+			<div className='w-full flex flex-col gap-4 items-center'>
+				<span>We are currently under development, so check back for updates.</span>
+				<Link href='https://github.com/Angus-Moore-Dev/Stasia' target="_blank">
+					<Button text='Github' icon={<GitHubIcon fontSize='large' />} onClick={() => {}} className='w-96 bg-tertiary' />
+				</Link>
+				<div className='w-96 p-2 rounded bg-tertiary flex flex-row items-center'>
+					<Image src='/jensen.jpeg' alt='Adam Jensen' width={100} height={100} className='w-[100px] h-[100px] object-cover rounded-full' />
+					<div className='flex-grow flex flex-col items-start justify-start h-full p-4'>
+						<span className='font-semibold text-xl'>Adam Jensen#0116</span>
+						<span>DM me on Discord if you want to discuss anything</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

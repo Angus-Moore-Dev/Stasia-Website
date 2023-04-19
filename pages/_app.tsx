@@ -7,20 +7,11 @@ import { useState } from 'react';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 
 export default function App({ Component, pageProps }: AppProps) {
-	const [supabaseClient] = useState(() => createBrowserSupabaseClient())
-	const { user } = pageProps;
 	return (
-		<SessionContextProvider
-		supabaseClient={supabaseClient}
-		initialSession={pageProps.initialSession}
-		>
-			<div className='w-screen h-screen flex flex-col'>
-				<AppNavbar user={user} />
-				<div className='flex-grow'>
-					<Component {...pageProps} />
-				</div>
-				<AppFooter />
+		<div className='w-screen h-screen flex flex-col'>
+			<div className='flex-grow'>
+				<Component {...pageProps} />
 			</div>
-		</SessionContextProvider>
+		</div>
 	)
 }
