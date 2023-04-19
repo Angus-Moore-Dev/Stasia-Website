@@ -16,7 +16,7 @@ export default function HomePage()
 			<Head>
 				<title>Stasia</title>
 			</Head>
-			<Image src='/logo.png' alt='logo' quality={100} width={2000} height={1000} priority={true} className='w-1/2' />
+			<Image src='/logo.png' alt='logo' quality={100} width={2000} height={1000} priority={true} className='w-1/2 h-fit' />
 			<span className='font-semibold text-xl text-center'>
 				A startup-focused tool for <span className='text-primary'>project management</span>, <span className='text-primary'>discussion</span>,&nbsp;
 				<span className='text-primary'>planning</span>, <span className='text-primary'>documentation</span> and <span className='text-primary'>file management</span>.
