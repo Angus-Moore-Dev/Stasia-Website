@@ -1,1 +1,1 @@
-![psychostasia graphic](https://user-images.githubusercontent.com/99398403/232233981-4dd2b6a0-0815-4eb6-b659-379c1db20c3f.png)
+![psychostasia graphic](https://user-images.githubusercontent.com/99398403/233205725-b0a79673-5210-4562-9b74-fd8f02e8cb2e.png)
