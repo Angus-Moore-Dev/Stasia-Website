@@ -15,6 +15,11 @@ export default function HomePage()
 		<div className="w-full h-full flex flex-col gap-8 items-center justify-start max-w-7xl mx-auto py-16 p-8">
 			<Head>
 				<title>Stasia</title>
+				<meta title='description' content='A startup-focused tool for project management, discussion, planning, documentation and file management.' />
+				<meta name='viewport' content='width=device-width, initial-scale=1' />
+				<meta name='theme-color' content='#00fe49' />
+				<meta name='keywords' content='project management, collaboration tools, collaboration, file management, project management tool, startup, startup tool, startup project management, startup project management tool, startup project management' />
+				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Image src='/logo.png' alt='logo' quality={100} width={2000} height={1000} priority={true} className='w-1/2 h-fit' />
 			<span className='font-semibold text-xl text-center'>
